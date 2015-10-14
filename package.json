@@ -1,0 +1,46 @@
+{
+  "name": "gulp-cordova-platform",
+  "version": "0.0.1",
+  "description": "This library adds a Cordova platform to the Cordova project",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkirkell/gulp-cordova-platform.git"
+  },
+  "keywords": [
+    "gulp",
+    "gulpjs",
+    "cordova",
+    "phonegap",
+    "platform",
+    "add"
+  ],
+  "author": {
+    "name": "Jeff Kirkell",
+    "email": "jeff.kirkell@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jkirkell/gulp-cordova-platform/issues"
+  },
+  "homepage": "https://github.com/jkirkell/gulp-cordova-platform",
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3",
+    "sinon": "^1.17.1",
+    "sinon-chai": "^2.8.0"
+  },
+  "dependencies": {
+    "cordova-lib": "^5.3.3",
+    "gulp-util": "^3.0.6",
+    "lodash": "^3.10.1",
+    "q": "^1.4.1",
+    "through2": "^2.0.0"
+  }
+}
