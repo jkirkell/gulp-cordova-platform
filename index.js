@@ -1,23 +1,15 @@
 'use strict';
 
-/**
- * Creates a new cordova project in the current directory.
- *
- * @author Jeff Kirkell      <jeff.kirkell@gmail.com>
- * @since  14 October 2015
- */
-
 // module dependencies
-var path = require('path'),
-    through = require('through2'),
-    gutil = require('gulp-util'),
-    cordova = require('cordova-lib').cordova.raw,
-    Q = require('q'),
-    _ = require('lodash');
+const path = require('path');
+const through = require('through2');
+const gutil = require('gulp-util');
+const cordova = require('cordova-lib').cordova.raw;
+const Promise = require('pinkie-promise');
+const _ = require('lodash');
 
 // export the module
 module.exports = function(platforms) {
-
     var platformList;
 
     if(Array.isArray(platforms) || _.isPlainObject(platforms)) {
@@ -31,8 +23,7 @@ module.exports = function(platforms) {
         // Change the working directory
         process.env.PWD = file.path;
 
-        // Pipe the file to the next step
-        this.push(file);
+        var self = this;
 
         cb();
     }, function(cb) {
@@ -49,7 +40,7 @@ module.exports = function(platforms) {
             return add(platform);
         });
 
-        Q.all(promises)
+        Promise.all(promises)
             .then(function() {
                 // Call the callback if all the plugins are added correctly
                 cb();
@@ -68,13 +59,9 @@ module.exports = function(platforms) {
  * @param {String} plugin   The name of the plugin that should be added.
  * @param {Object} opts     The options object.
  */
-function add(platform, opts) {
-    return Q.fcall(function() {
-
-        // Print which platform will be added
-        gutil.log('\tadd ' + platform);
-
-        // Add the platform without options
-        return cordova.platform('add', platform);
-    });
+function add(platform) {
+      // Print which platform will be added
+      gutil.log('\tadd ' + platform);
+      // Add the platform without options
+      return cordova.platform('add', platform);
 }

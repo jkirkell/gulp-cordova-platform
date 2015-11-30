@@ -1,6 +1,6 @@
 {
   "name": "gulp-cordova-platform",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "This library adds a Cordova platform to the Cordova project",
   "main": "index.js",
   "scripts": {
@@ -40,7 +40,7 @@
     "cordova-lib": "^5.3.3",
     "gulp-util": "^3.0.6",
     "lodash": "^3.10.1",
-    "q": "^1.4.1",
+    "pinkie-promise": "^2.0.0",
     "through2": "^2.0.0"
   }
 }
