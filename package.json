@@ -37,8 +37,8 @@
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
-    "cordova-lib": "^5.3.3",
-    "gulp-util": "^3.0.6",
+    "cordova-lib": "^5.4.0",
+    "gulp-util": "^3.0.4",
     "lodash": "^3.10.1",
     "pinkie-promise": "^2.0.0",
     "through2": "^2.0.0"
